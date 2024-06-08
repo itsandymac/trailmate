@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> TrailMate </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<header id="header">
+    <div class="header-container">
+        <div class="header-content">
+            <div class="header-col-left">
+                <div class="logo-wrapper">
+                    <img class="logo" src="media/logo.svg" alt="Logo">
+                </div>
+            </div>
+            <div class="header-col-right">
+                <div class="header-btn-wapper">
+                    <img class="cart-icon" src="media/cart.svg" alt="Cart Icon">
+                    <img class="menu-icon" src="media/menu-closed.svg" alt="Menu Icon">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="off-canvas-menu" class="off-canvas-menu">
+        <div class="menu-header">
+            <img class="close-icon" src="media/menu-open.svg" alt="Close Menu">
+        </div>
+        <nav class="menu-content">
+            <ul class="nav-items">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#trails">Trails</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+</header>
+<div id="smooth-wrapper">
+    <div id="smooth-content">
+<section id="hero">
+    <div class="hero-container">
+        <div id="hero-overlay"></div>
+        <div class="hero-content-container">
+        <div class="hero-content">
+            <h1>Find and explore <span class="text-highlight">the best hiking trails</span> in South Africa.</h1>
+            <p> Find your next adventure with TrailMate. Discover new trails, track your hikes, and share your experiences with a vibrant community.</p>
+            <div class="hero-buttons-container">
+            <button class="main-cta-btn"> Download the App <i class="fa fa-download"></i></button>
+            <a href="#features" class="text-link">See Features</a>
+            </div>
+            <div class="reviews-w-heading-wrapper">
+                <p>The people who love TrailMate:</p>
+            
+            <div class="reviews-container"> 
+                <div class="review-images-container">
+                    <div class="avatar-images"></div>
+                    <div class="avatar-images"></div>
+                    <div class="avatar-images"></div>
+                    <div class="avatar-images"></div>
+                </div>
+                <div class="reviews-rating-container">
+                    <h6>4.8 out of 5</h6>
+                    <p class="paragraph-small">Based on 242 reviews on Google Play</p>
+                    <img class="five-stars" src="media/5-stars.svg" alt="five-star-rating">
+                </div>
+        </div>
+    </div>
+    </div>
+</section>    
+<section>
+    <div>
+
+    </div>
+
+</section>
+</div>
+</div>
+<footer>
+    
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuIcon = document.querySelector('.menu-icon');
+        const closeIcon = document.querySelector('.close-icon');
+        const offCanvasMenu = document.getElementById('off-canvas-menu');
+        const menuItems = document.querySelectorAll('.menu-content li');
+
+        menuIcon.addEventListener('click', function() {
+            offCanvasMenu.classList.add('open');
+            menuItems.forEach((item, index) => {
+                item.style.setProperty('--animation-delay', `${index * 0.1}s`);
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        closeIcon.addEventListener('click', function() {
+            offCanvasMenu.classList.remove('open');
+            menuItems.forEach((item) => {
+                item.style.animationName = '';
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
